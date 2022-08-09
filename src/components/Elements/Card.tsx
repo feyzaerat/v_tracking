@@ -89,7 +89,7 @@ class Cards extends Component {
             )}
           </Card>
         </React.Fragment>
-        Butonlar Card ekleyecek sekilde düzenlenecek
+        {/* Butonlar Card ekleyecek sekilde düzenlenecek */}
         <Card
           className='Card left-2vw'
           title='Card title'
