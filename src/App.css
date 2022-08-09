@@ -1,7 +1,17 @@
-.App {
-  text-align: center;
+.App{
+  margin:0 auto;
+  height: max-content;
+  
 }
-
+.App,  .Layout, .Header, .Card{
+  background: #fefefe;
+}
+aside{
+  min-height: 100vh;
+}
+.content{
+  background: #f8f8f8;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -13,19 +23,11 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.text-white{
+  color:#FEFEFE;
 }
-
-.App-link {
-  color: #61dafb;
+.text-center{
+  text-align: center;
 }
 
 @keyframes App-logo-spin {
@@ -36,3 +38,129 @@
     transform: rotate(360deg);
   }
 }
+.w-50{
+  width: 50%;
+}
+.w-25{
+  width: 25%;
+}
+.w-35{
+  width: 35.6%;
+}
+.w-75{
+  width: 75%;
+}
+.w-865{
+  width: 86.5%;
+}
+.w-100{
+  width: 100%;
+}
+.site-page-header {
+  border: 1px solid rgb(235, 237, 240);
+  
+}
+.left-0vw{
+  margin-left:0vw
+}
+.left-05vw{
+  margin-left: 0.5vw;
+}
+
+.left-2vw{
+  margin-left: 2vw;
+}
+.right-2vw{
+  margin-right: 2vw;
+}
+.right-05vw{
+  margin-right: 0.5vw;
+}
+.top-1vw{
+  margin-top: 1vw;
+}
+.top-1-25vw{
+  margin-top: 1.25vw;
+}
+.top-05vw{
+  margin-top: 0.5vw;
+}
+.top-2vw{
+  margin-top: 2vw;
+}
+.bottom-2vw{
+  margin-bottom: 2vw;
+}
+.m-0-auto{
+  margin: 0 auto;
+}
+
+#components-layout-demo-custom-trigger .trigger {
+  padding: 0 24px;
+  font-size: 18px;
+  line-height: 64px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+#components-layout-demo-custom-trigger .trigger:hover {
+  color: #1890ff;
+}
+
+#components-layout-demo-custom-trigger .logo {
+  height: 32px;
+  margin: 16px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.site-layout .site-layout-background {
+  background: #fff;
+}
+.ant-layout-sider{
+  background: #001529;
+}
+.ant-layout-footer{
+  background: #f8f8f8!important;
+}
+.ant-layout-header{
+  background: #fefefe!important;
+}
+svg{
+  margin-left:1vw;
+}
+.Card{
+
+
+  box-shadow: 1px 1px 10px 1px #8f8f8f ;
+  -webkit-box-shadow: 1px 1px 10px 1px #8f8f8f ;;
+  border-radius: 1%;
+  margin:2vw;
+
+}
+.success{
+  background: #53A828;
+  border-color: #53A828;
+}
+.success:hover{
+  background: #53A828;
+  border-color: #53A828;
+  opacity: 75%;
+}
+
+
+
+
+
+
+ .itemStyle {
+  
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-bottom: 15px;
+ }
+ 
+ .itemParent {
+   display: flex;
+   align-items: center;
+ }
