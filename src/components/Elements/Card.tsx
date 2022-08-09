@@ -18,7 +18,7 @@ class Cards extends Component {
     this.setState({ items: arr });
   };
 
-  minus = (nowId) => {
+  minus = (nowId: any) => {
     console.log('id: ' + nowId);
     let arr = [...this.state.items];
     let newArr = arr.filter((val) => {
