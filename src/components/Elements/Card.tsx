@@ -76,7 +76,7 @@ import Selectbox from './Selectbox';
            : <Button className="gr-btn" type="primary" onClick={this.add} style={{ width: 250 }}>+ Add New Group</Button>}
            </Card>
         </React.Fragment>
-
+/*****Butonlar Card ekleyecek sekilde düzenlenecek ****/
         <Card className='Card left-2vw' title="Card title" bordered={true} style={{ width: 400 }}>
                 
 
