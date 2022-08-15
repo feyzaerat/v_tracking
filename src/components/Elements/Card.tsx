@@ -39,30 +39,39 @@ import Selectbox from './Selectbox';
   render() {
     return (
       <div className='site-card-border-less-wrapper'>
-         <React.Fragment>
+
            {this.state.items.map((tags)=>
                                  <React.Fragment>
 
-                                     {this.state.items.length > 0 ? null :
-                                         <Button className=' add-btn gr-btn ' type="primary" onClick={this.add} style={{ width: 250 }}>+ Add New Group</Button>}
+
 
                                          <Card className='Card left-2vw' title="Card title" bordered={true} style={{ width: 400 }}>
+
                                             <Input style={{ width: 350 }} placeholder="Please Enter Group Name" /><br/>
                                             <Selectbox/><br/>
                                             <Date_picker/><Date_picker/><Date_picker/>
+                                           {this.state.items.length > 0 ? null :
+
+                                                 <Button className='  gr-btn top-05vw ' type="primary" onClick={this.add} style={{ width: 350 }}>+ Add New Group</Button>
+                                               }
+
+                                           {this.state.items.length === 4 ? null :
+                                                <Button className=" gr-btn top-05vw" type="primary" onClick={this.add} style={{ width: 350 }}>+ Add New Group</Button>
+                                           }
                                             <Button style={{ width: 350 }} title="Remove The Group" type="primary" danger className=' gr-btn top-05vw 'onClick={() => this.minus(tags.id)}>- Delete This Group</Button>
                                          </Card>
 
                                  </React.Fragment>
            )}
-         
-           {this.state.items.length === 4 ? null :
-               <Button className="add-btn gr-btn" type="primary" onClick={this.add} style={{ width: 250 }}>+ Add New Group</Button>
-           }
 
-        </React.Fragment>
+
+
+        <div className='text-right pb-1vw'>
+          <Button style={{ width: 150 }} title="Save" type="primary"  className=' gr-btn top-05vw right-1vw success '>Save</Button>
+        </div>
 
       </div>
+
     )
   }
 }
