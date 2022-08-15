@@ -3,18 +3,11 @@ import { Card,Input,Button  } from 'antd';
 import Date_picker from './Date_picker';
 import Selectbox from './Selectbox';
 
-
-
-
-
-
- 
   class Cards extends Component {
 
     state = { 
       items: [
-        {id: 1},
-        {id: 2}
+        {id: 1}
       ],
    }
   
@@ -42,56 +35,33 @@ import Selectbox from './Selectbox';
     
     this.setState({items: newArr})
   }
-   
 
-
-    
   render() {
     return (
-
-
-      
-       
       <div className='site-card-border-less-wrapper'>
-
-        <React.Fragment>
-        <Card className='Card left-2vw' title="Card title" bordered={true} style={{ width: 700 }}>
-           <div className="sec">
-             {this.state.items.length > 0 ? null : <Button className=" gr-btn" type="primary" onClick={this.add} style={{ width: 250 }}>+ Add New Group</Button>}
-           </div>
-           
-         
-       
+         <React.Fragment>
            {this.state.items.map((tags)=>
                                  <React.Fragment>
-                                   <div className="itemParent">
-                                     <div className="itemStyle top-1-25vw"><Input style={{ width: 350 }} placeholder="Please Enter Group Name" />　</div>
-                                     <Button style={{ width: 350 }} title="Remove The Group" type="primary" danger className=' gr-btn top-05vw 'onClick={() => this.minus(tags.id)}>- Delete This Group</Button>
-                                   </div>
+
+                                     {this.state.items.length > 0 ? null :
+                                         <Button className=' add-btn gr-btn ' type="primary" onClick={this.add} style={{ width: 250 }}>+ Add New Group</Button>}
+
+                                         <Card className='Card left-2vw' title="Card title" bordered={true} style={{ width: 400 }}>
+                                            <Input style={{ width: 350 }} placeholder="Please Enter Group Name" /><br/>
+                                            <Selectbox/><br/>
+                                            <Date_picker/><Date_picker/><Date_picker/>
+                                            <Button style={{ width: 350 }} title="Remove The Group" type="primary" danger className=' gr-btn top-05vw 'onClick={() => this.minus(tags.id)}>- Delete This Group</Button>
+                                         </Card>
+
                                  </React.Fragment>
            )}
          
-         {this.state.items.length === 4 || this.state.items.length === 0 
-           ? null
-           : <Button className="gr-btn" type="primary" onClick={this.add} style={{ width: 250 }}>+ Add New Group</Button>}
-           </Card>
+           {this.state.items.length === 4 ? null :
+               <Button className="add-btn gr-btn" type="primary" onClick={this.add} style={{ width: 250 }}>+ Add New Group</Button>
+           }
+
         </React.Fragment>
-/*****Butonlar Card ekleyecek sekilde düzenlenecek ****/
-        <Card className='Card left-2vw' title="Card title" bordered={true} style={{ width: 400 }}>
-                
 
-                <Input style={{ width: 350 }} placeholder="Please Enter Group Name" />
-                <Selectbox/><br/>
-                <Date_picker/><Date_picker/><Date_picker/><br/>
-
-                <Button style={{ width: 350 }} title="Add New Group" type="primary" className='gr-btn top-2vw'>+ Add New Group</Button>
-                <Button href='{new-group}' style={{ width: 350 }} title="Remove The Group" type="primary" danger className=' gr-btn top-05vw '>- Delete This Group</Button>
-
-                <Button style={{ width: 350 }} title="Save" type="primary"  className=' gr-btn top-05vw  success '>Save</Button>
-        
-          </Card>
-
-               
       </div>
     )
   }
