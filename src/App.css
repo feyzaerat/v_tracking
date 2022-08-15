@@ -1,3 +1,4 @@
+@import '~antd/dist/antd.css';
 .App{
   margin:0 auto;
   height: max-content;
@@ -146,7 +147,11 @@ svg{
   border-color: #53A828;
   opacity: 75%;
 }
-
+.add-btn{
+  position: fixed!important;
+  top:5vw!important;
+  right: 1vw!important;
+}
 
 
 
