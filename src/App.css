@@ -1,4 +1,7 @@
 @import '~antd/dist/antd.css';
+body::-webkit-scrollbar{
+  display: none;
+}
 .App{
   margin:0 auto;
   height: max-content;
@@ -71,6 +74,9 @@ aside{
 .left-2vw{
   margin-left: 2vw;
 }
+.right-1vw{
+  margin-right: 1vw;
+}
 .right-2vw{
   margin-right: 2vw;
 }
@@ -94,6 +100,9 @@ aside{
 }
 .m-0-auto{
   margin: 0 auto;
+}
+.pb-1vw{
+  padding-bottom: 1vw;
 }
 
 #components-layout-demo-custom-trigger .trigger {
@@ -150,7 +159,10 @@ svg{
 .add-btn{
   position: fixed!important;
   top:5vw!important;
-  right: 1vw!important;
+ /* right: 1vw!important;*/
+}
+.text-right{
+  text-align: right;
 }
 
 
@@ -169,3 +181,14 @@ svg{
    display: flex;
    align-items: center;
  }
+.footer{
+  text-align: center;
+  color: #888888;
+  font-size: 0.75vw;
+}
+.footer a{
+  color: #888888;
+}
+.footer a:hover{
+  color: #777777;
+}
