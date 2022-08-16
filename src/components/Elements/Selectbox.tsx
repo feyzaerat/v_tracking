@@ -1,8 +1,8 @@
 import React, { Component, useState } from 'react'
-import { DatePickerProps, Row, Col, TimePickerProps,Button, Input } from 'antd';
 import { DatePicker, Select, Space, TimePicker } from 'antd';
-import { PlusOutlined, CloseOutlined} from '@ant-design/icons';
-
+import type { RadioChangeEvent } from 'antd';
+import { Radio } from 'antd';
+import type { SizeType } from 'antd/es/config-provider/SizeContext';
 
 const { Option} = Select;
 const onChange = (value: string) => {
@@ -14,6 +14,9 @@ const onSearch = (value: string) => {
 };
 
 const children: React.ReactNode[] = [];
+for (let i = 1; i < 11; i++) {
+    children.push(<Option key={i + i}>{i}</Option>);
+}
 
 const days = [
   {value: 'Monday', text: 'Monday'},
@@ -31,12 +34,14 @@ const handleChange = (value: string[]) => {
 };
 
 
-const Selectbox: React.FC = () => {
+const Selectboxes: React.FC = () => {
+
+    const [size, setSize] = useState<SizeType>('middle');
 
   return (
      <>
-      
-        
+
+
            <Select
             style={{ width: 350 }}
             mode="multiple"
@@ -51,52 +56,14 @@ const Selectbox: React.FC = () => {
                ))}
            </Select><br/>
 
-           <Select
-             showSearch
-             style={{ width: 175 }}
-             placeholder="select the count of vehicles"
-             optionFilterProp="children"
-             onChange={onChange}
-             onSearch={onSearch}
-             className="top-1vw w-35"
-             filterOption={(input, option) =>
-               (option!.children as unknown as string).toLowerCase().includes(input.toLowerCase())
-             }
-           >
-          <Option value="1">1</Option>
-          <Option value="2">2</Option>
-          <Option value="3">3</Option>
-          <Option value="4">4</Option>
+         <Select showSearch placeholder="Departure Counts" size={size} className={"top-1vw w-35"} onChange={handleChange} style={{ width: 175}}>
+             {children}
+         </Select>
 
-           </Select>
+         <Select showSearch placeholder="Departure Counts" size={size} className={"top-1vw w-35"} onChange={handleChange} style={{ width: 175}}>
+             {children}
+         </Select>
 
-           <Select
-             showSearch
-             style={{ width: 175 }}
-             placeholder="Select Minute Interval."
-             optionFilterProp="children"
-             onChange={onChange}
-             onSearch={onSearch}
-             className="top-1vw w-35"
-             filterOption={(input, option) =>
-               (option!.children as unknown as string).toLowerCase().includes(input.toLowerCase())
-             }
-           >
-          <Option value="1">1</Option>
-          <Option value="2">2</Option>
-          <Option value="3">3</Option>
-          <Option value="4">4</Option>
-          <Option value="5">5</Option>
-
-           </Select>
-      
-       
-           
-           
-       
-      
-       
-    
       <br />
     </>
     
@@ -105,4 +72,4 @@ const Selectbox: React.FC = () => {
 
 };
 
-export default Selectbox;
+export default Selectboxes;
