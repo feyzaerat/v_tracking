@@ -47,7 +47,7 @@ import Selectbox from './Selectbox';
                <Col span={8}>
                   <div className="site-card-wrapper Card  text-center m-0-auto" >
 
-                                         <Card className='border-0' title="Vehicle Departure Times" bordered={true} >
+                                         <Card className='border-0 text-center' title="New Group" bordered={true} >
 
                                             <Input style={{ width: 350 }} placeholder="Please Enter Group Name" /><br/>
                                             <Selectbox/><br/>
