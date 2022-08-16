@@ -218,6 +218,6 @@ svg{
   background: #fff;
 }
 
-.ant-layout-header{
-
+.ant-input:placeholder-shown {
+  text-align: center;
 }
