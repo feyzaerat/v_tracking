@@ -15,7 +15,7 @@ const onSearch = (value: string) => {
 
 const children: React.ReactNode[] = [];
 for (let i = 1; i < 11; i++) {
-    children.push(<Option key={i + i}>{i}</Option>);
+    children.push(<Select.OptGroup key={i + i}>{i}</Select.OptGroup>);
 }
 
 const days = [
@@ -50,9 +50,9 @@ const Selectboxes: React.FC = () => {
             onChange={handleChange}
             className='top-1vw left-1vw '>
                {days.map((option, index) => (
-                  <option key={index} value={option.value}>
+                  <Select.OptGroup key={index} value={option.value}>
                      {option.text}
-                  </option>
+                  </Select.OptGroup>
                ))}
            </Select><br/>
 

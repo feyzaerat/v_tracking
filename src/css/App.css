@@ -149,4 +149,11 @@ body::-webkit-scrollbar{
    display: flex;
    align-items: center;
  }
-
+.btn {
+  color: #fefefe;
+  border-radius: 0.15vw;
+  box-shadow: none;
+  border-block-style: none;
+  padding: 0.25vw;
+  border: none;
+}
