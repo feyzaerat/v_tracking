@@ -1,6 +1,6 @@
 import {Menu} from 'antd';
 import React from "react";
-import {HomeOutlined, UserOutlined, ClockCircleOutlined, LogoutOutlined} from '@ant-design/icons';
+import {HomeOutlined, ClockCircleOutlined, LogoutOutlined} from '@ant-design/icons';
 
 const Siders = () => {
     return(
@@ -15,6 +15,7 @@ const Siders = () => {
                         key: '1',
                         icon: <HomeOutlined />,
                         label: 'Home',
+
                     },
                     {
                         key: '2',
