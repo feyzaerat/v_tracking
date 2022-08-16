@@ -1,18 +1,17 @@
-import React, { Component } from 'react';
-import {Menu, MenuProps} from "antd";
-const items1: MenuProps['items'] = ['1', '2', '3', '4', '5'].map(key => ({
-  key,
-  label: `nav ${key}`,
-}));
+import React, { useState } from 'react';
+import logo from '../img/female.png';
 
-class Header extends Component {
-  render() {
+
+const Header: React.FC = () =>  {
+    const [collapsed, setCollapsed] = useState(false);
     return (
-      <div>
-        <span><Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']} items={items1} />
-        </span> </div>
+      <>
+          <ul className="flex-right">
+              <li><a><img src={logo} width="32" height="32"/></a></li>
+          </ul>
+      </>
     );
-  }
+
 }
 
 export default Header;
