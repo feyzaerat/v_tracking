@@ -1,24 +1,35 @@
-import { Menu } from 'antd';
-import { MailOutlined, AppstoreOutlined, SettingOutlined,HomeOutlined,UserOutlined,MenuOutlined, LogoutOutlined} from '@ant-design/icons';
+import {Menu, MenuProps} from 'antd';
+import { MailOutlined, AppstoreOutlined, SettingOutlined,HomeOutlined,UserOutlined,MenuOutlined, LogoutOutlined, LaptopOutlined, NotificationOutlined,} from '@ant-design/icons';
+import React from "react";
+const items2: MenuProps['items'] = [UserOutlined, LaptopOutlined, NotificationOutlined].map(
+    (icon, index) => {
+        const key = String(index + 1);
 
-const Navbar = () => (
+        return {
+            key: `sub${key}`,
+            icon: React.createElement(icon),
+            label: `subnav ${key}`,
 
-     <Menu mode="horizontal" defaultSelectedKeys={['home']}>
-
-     <Menu.SubMenu key="SubMenu"  icon={<MenuOutlined />}>
-      <Menu.Item key="two" icon={<UserOutlined />}>
-        Profile
-      </Menu.Item>
-      <Menu.Item key="three" icon={<LogoutOutlined />}>
-        Logout
-      </Menu.Item>
-    
-     </Menu.SubMenu>
-     <Menu.Item key="home" icon={<HomeOutlined />}>
-      Home
-     </Menu.Item>
-   
-  </Menu>
+            children: new Array(4).fill(null).map((_, j) => {
+                const subKey = index * 4 + j + 1;
+                return {
+                    key: subKey,
+                    label: `option${subKey}`,
+                };
+            }),
+        };
+    },
 );
 
-export default Navbar;
+const Siders = () => (
+
+    <Menu
+        mode="inline"
+        defaultSelectedKeys={['1']}
+        defaultOpenKeys={['sub2']}
+        style={{ height: '100%', borderRight: 0 }}
+        items={items2}
+    />
+);
+
+export default Siders;
