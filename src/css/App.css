@@ -1,4 +1,4 @@
-@import '~antd/dist/antd.css';
+@import '../../node_modules/antd/dist/antd.css';
 body::-webkit-scrollbar{
   display: none;
 }
@@ -10,13 +10,7 @@ body::-webkit-scrollbar{
 .App,  .Layout, .Header, .Card{
   background: #fefefe;
 }
-aside{
-  min-height: 100vh;
-}
-.content{
-  background: #fefefe;
-  padding-right: 3vw;
-}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -67,10 +61,7 @@ aside{
 .w-100{
   width: 100%;
 }
-.site-page-header {
-  border: 1px solid rgb(235, 237, 240);
-  
-}
+
 .left-0vw{
   margin-left:0;
 }
@@ -112,41 +103,7 @@ aside{
   padding-bottom: 1vw;
 }
 
-#components-layout-demo-custom-trigger .trigger {
-  padding: 0 24px;
-  font-size: 18px;
-  line-height: 64px;
-  cursor: pointer;
-  transition: color 0.3s;
-}
 
-
-
-#components-layout-demo-custom-trigger .logo {
-  height: 32px;
-  margin: 16px;
-  background: rgba(255, 255, 255, 0.3);
-}
-
-.site-layout .site-layout-background {
-  background: #fff;
-}
-.ant-layout-sider{
-  background: #001529;
-}
-.ant-layout-footer{
-  background: #f8f8f8!important;
-}
-.ant-layout-header{
-  background: #fefefe!important;
-  padding-left: 200px!important;
-  padding-right: inherit;
-  line-height: 64px;
-}
-
-svg{
-  margin-left:1vw;
-}
 .Card{
 
 
@@ -190,34 +147,4 @@ svg{
    display: flex;
    align-items: center;
  }
-.footer{
-  text-align: center;
-  color: #888888;
-  font-size: 0.75vw;
-}
-.footer a{
-  color: #888888;
-}
-.footer a:hover{
-  color: #777777;
-}
-#components-layout-demo-top-side-2 .logo {
-  float: left;
-  width: 120px;
-  height: 31px;
-  margin: 16px 24px 16px 0;
-  background: rgba(255, 255, 255, 0.3);
-}
 
-.ant-row-rtl #components-layout-demo-top-side-2 .logo {
-  float: right;
-  margin: 16px 0 16px 24px;
-}
-
-.site-layout-background {
-  background: #fff;
-}
-
-.ant-input:placeholder-shown {
-  text-align: center;
-}
