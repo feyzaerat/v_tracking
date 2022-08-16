@@ -1,0 +1,87 @@
+aside{
+    min-height: 100vh;
+}
+.content{
+    background: #fefefe;
+    padding-right: 3vw;
+}
+.site-page-header {
+    border: 1px solid rgb(235, 237, 240);
+
+}
+#components-layout-demo-custom-trigger .trigger {
+    padding: 0 24px;
+    font-size: 18px;
+    line-height: 64px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+#components-layout-demo-custom-trigger .logo {
+    height: 32px;
+    margin: 16px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.site-layout .site-layout-background {
+    background: #fff;
+}
+.ant-layout-sider{
+    background: #001529;
+}
+.ant-layout-footer{
+    background: #f8f8f8!important;
+}
+.ant-layout-header {
+    height: 64px;
+    padding: 0 50px;
+    color: #000000d9;
+    line-height: 64px;
+    background: #001529;
+}
+#components-layout-demo-custom-trigger .trigger {
+    padding: 0 24px;
+    font-size: 18px;
+    line-height: 64px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+.trigger {
+    padding: 0 24px;
+    font-size: 18px;
+    line-height: 64px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+#components-layout-demo-custom-trigger .trigger:hover {
+    color: #1890ff;
+}
+
+#components-layout-demo-custom-trigger .logo {
+    height: 32px;
+    margin: 16px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.site-layout .site-layout-background {
+    background: #fff;
+}
+
+.flex-right {
+    position: relative;
+    display: inline-flex;
+    margin-right: 0;
+    right: 20px;
+    list-style: none;
+    float: right;
+}
+.flex-right li{
+    font-weight: 600;
+    float: right;
+}
+.flex-right li a img{
+    border: 2px solid #888888;
+    background: #f8f8f8;
+    border-radius: 50%;
+    padding: 3px;
+}
