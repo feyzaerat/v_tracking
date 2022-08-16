@@ -9,7 +9,7 @@ class Content extends Component {
             <div className='content'>
                 <Breadcrumb style={{ margin: '16px'}}>
                     <Breadcrumb.Item>Vehicles</Breadcrumb.Item>
-                    <Breadcrumb.Item>Groups</Breadcrumb.Item>
+                    <Breadcrumb.Item>Vehicle Departure Times</Breadcrumb.Item>
                     <Breadcrumb.Item>New Group</Breadcrumb.Item>
                 </Breadcrumb>
                 <Card/>
