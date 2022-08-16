@@ -131,7 +131,9 @@ body::-webkit-scrollbar{
   text-align: right;
 }
 
-
+.ant-input:placeholder-shown {
+  text-align: center!important;
+}
 
 
 
