@@ -14,12 +14,18 @@ aside{
   min-height: 100vh;
 }
 .content{
-  background: #f8f8f8;
-  padding: 1vw;
+  background: #fefefe;
+  padding-right: 3vw;
 }
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+.ant-card{
+  width: fit-content;
+}
+.ant-breadcrumb {
+  font-weight: 500!important;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -66,7 +72,7 @@ aside{
   
 }
 .left-0vw{
-  margin-left:0vw
+  margin-left:0;
 }
 .left-05vw{
   margin-left: 0.5vw;
@@ -114,9 +120,7 @@ aside{
   transition: color 0.3s;
 }
 
-#components-layout-demo-custom-trigger .trigger:hover {
-  color: #1890ff;
-}
+
 
 #components-layout-demo-custom-trigger .logo {
   height: 32px;
@@ -135,7 +139,11 @@ aside{
 }
 .ant-layout-header{
   background: #fefefe!important;
+  padding-left: 200px!important;
+  padding-right: inherit;
+  line-height: 64px;
 }
+
 svg{
   margin-left:1vw;
 }
@@ -192,4 +200,24 @@ svg{
 }
 .footer a:hover{
   color: #777777;
+}
+#components-layout-demo-top-side-2 .logo {
+  float: left;
+  width: 120px;
+  height: 31px;
+  margin: 16px 24px 16px 0;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.ant-row-rtl #components-layout-demo-top-side-2 .logo {
+  float: right;
+  margin: 16px 0 16px 24px;
+}
+
+.site-layout-background {
+  background: #fff;
+}
+
+.ant-layout-header{
+
 }
