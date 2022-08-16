@@ -6,23 +6,18 @@ import Selectbox from './Selectbox';
 const handleSubmit = (event: {
   target: any;
   preventDefault: () => void; }) => {
-  event.preventDefault();
-  alert('You have submitted the form.')
-  console.log(event.target[0].value)
-
-
+   event.preventDefault();
+   alert('You have submitted the form.')
+   console.log(event.target[0].value)
 }
-  class Cards extends Component {
 
-    state = { 
-      items: [
-        {id: 1}
-      ],
-   }
+class Cards extends Component {
+
+  state = {items: [{id: 1}],}
 
   add = () => {
     let arr = [...this.state.items];
-    if(arr.length >= 6) {
+     if(arr.length >= 6) {
       return;
     } else {
       arr.push({id: Math.floor(Math.random()*1000)})
@@ -51,46 +46,32 @@ const handleSubmit = (event: {
 
       <div>
         {this.state.items.map((tags)=>
-        <Form onSubmitCapture={handleSubmit}>
-
-        <Row gutter={24}>
-
+          <Form onSubmitCapture={handleSubmit}>
+           <Row gutter={24}>
                <Col span={8}>
                   <div className="site-card-wrapper Card  text-center m-0-auto" >
-
-                                         <Card className='border-0 text-center' title="New Group" bordered={true} >
-
-
+                     <Card className='border-0 text-center' title="New Group" bordered={true} >
                                             <Input style={{ width: 350 }} placeholder="Please Enter Group Name" /><br/>
                                             <Selectbox/><br/>
                                             <Date_picker/><Date_picker/><Date_picker/>
-                                           {this.state.items.length > 0 ? null :
-
+                                            {this.state.items.length > 0 ? null :
                                                  <Button className='  gr-btn top-05vw ' type="primary" onClick={this.add} style={{ width: 350 }}>+ Add New Group</Button>
-                                               }
+                                             }
 
                                            {this.state.items.length === 6 ? null :
                                                 <Button className=" gr-btn top-05vw" type="primary" onClick={this.add} style={{ width: 350 }}>+ Add New Group</Button>
                                            }
-                                            <Button style={{ width: 350 }} title="Remove The Group" type="primary" danger className=' gr-btn top-05vw 'onClick={() => this.minus(tags.id)}>- Delete This Group</Button>
-
-                                           </Card>
-
-                                   </div>
-
-
+                                                <Button style={{ width: 350 }} title="Remove The Group" type="primary" danger className=' gr-btn top-05vw 'onClick={() => this.minus(tags.id)}>- Delete This Group</Button>
+                                         </Card>
+                  </div>
                </Col>
-        </Row>
+           </Row>
 
-          <div className='text-right pb-1vw'>
-            <button  style={{ width: 150 }} title="Save" type="submit"  className=' btn gr-btn top-05vw right-1vw success float-right '>Save</button>
-          </div>
-             </Form>
+           <div className='text-right pb-1vw'>
+             <button  style={{ width: 150 }} title="Save" type="submit"  className=' btn gr-btn top-05vw right-1vw success float-right '>Save</button>
+           </div>
+          </Form>
              )}
-
-
-
-
       </div>
 
     )
