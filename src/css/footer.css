@@ -1,0 +1,11 @@
+.footer{
+    text-align: center;
+    color: #888888;
+    font-size: 0.75vw;
+}
+.footer a{
+    color: #888888;
+}
+.footer a:hover{
+    color: #777777;
+}
