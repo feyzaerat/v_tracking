@@ -1,24 +1,41 @@
-import { Menu } from 'antd';
-import { MailOutlined, AppstoreOutlined, SettingOutlined,HomeOutlined,UserOutlined,MenuOutlined, LogoutOutlined} from '@ant-design/icons';
+import {Menu} from 'antd';
+import React from "react";
+import {HomeOutlined, ClockCircleOutlined, LogoutOutlined} from '@ant-design/icons';
 
-const Navbar = () => (
+const Siders = () => {
+    return(
+        <>
+            <div className="logo" />
+            <Menu
+                theme="dark"
+                mode="inline"
+                defaultSelectedKeys={['2']}
+                items={[
+                    {
+                        key: '1',
+                        icon: <HomeOutlined />,
+                        label: 'Home',
 
-     <Menu mode="horizontal" defaultSelectedKeys={['home']}>
+                    },
+                    {
+                        key: '2',
+                        icon: <ClockCircleOutlined />,
+                        label: 'Vehicles',
+                    },
+                    {
+                        key: '3',
+                        icon: <LogoutOutlined />,
+                        label: 'Logout',
+                    },
+                ]}
+            />
 
-     <Menu.SubMenu key="SubMenu"  icon={<MenuOutlined />}>
-      <Menu.Item key="two" icon={<UserOutlined />}>
-        Profile
-      </Menu.Item>
-      <Menu.Item key="three" icon={<LogoutOutlined />}>
-        Logout
-      </Menu.Item>
-    
-     </Menu.SubMenu>
-     <Menu.Item key="home" icon={<HomeOutlined />}>
-      Home
-     </Menu.Item>
-   
-  </Menu>
-);
+        </>
 
-export default Navbar;
+    );
+
+
+}
+
+
+export default Siders;

@@ -1,26 +1,33 @@
-import React, { Component, useState } from 'react';
-import { Card, Input, Button } from 'antd';
-import DatePicker from './Date_picker';
+import React, { Component } from 'react';
+import { Card, Input, Button, Row, Col, Form } from 'antd';
+import DatePicker from './DatePicker';
 import Selectbox from './Selectbox';
 
-class Cards extends Component {
-  state = {
-    items: [{ id: 1 }, { id: 2 }],
-  };
+const handleSubmit = (event: { target: any; preventDefault: () => void }) => {
+  event.preventDefault();
+  alert('You have submitted the form.');
+  console.log(event.target[0].value);
+};
 
-  add = () => {
-    let arr = [...this.state.items];
-    if (arr.length >= 4) {
+const Cards = () => {
+  const [state, setstate] = React.useState<{ items: { id: number }[] }>({
+    items: [{ id: 1 }],
+  });
+
+  //Her state işleminde tekrar function oluşturulmasını useCallback ile engelliyoruz
+  const add = React.useCallback(() => {
+    let arr = [...state.items];
+    if (arr.length >= 6) {
       return;
     } else {
       arr.push({ id: Math.floor(Math.random() * 1000) });
     }
-    this.setState({ items: arr });
-  };
+    setstate({ items: arr });
+  }, []);
 
-  minus = (nowId: any) => {
+  const minus = React.useCallback((nowId: any) => {
     console.log('id: ' + nowId);
-    let arr = [...this.state.items];
+    let arr = [...state.items];
     let newArr = arr.filter((val) => {
       console.log('id: ' + val.id);
       if (nowId === val.id) {
@@ -30,107 +37,76 @@ class Cards extends Component {
       }
     });
 
-    this.setState({ items: newArr });
-  };
+    setstate({ items: newArr });
+  }, []);
 
-  render() {
-    return (
-      <div className='site-card-border-less-wrapper'>
-        <React.Fragment>
-          <Card
-            className='Card left-2vw'
-            title='Card title'
-            bordered={true}
-            style={{ width: 700 }}>
-            <div className='sec'>
-              {this.state.items.length > 0 ? null : (
-                <Button
-                  className=' gr-btn'
-                  type='primary'
-                  onClick={this.add}
-                  style={{ width: 250 }}>
-                  + Add New Group
-                </Button>
-              )}
-            </div>
+  return (
+    <div>
+      {state.items.map((tags, index) => (
+        <Form key={index} onSubmitCapture={handleSubmit}>
+          <Row gutter={24}>
+            <Col span={8}>
+              <div className='site-card-wrapper Card  text-center m-0-auto'>
+                <Card
+                  className='border-0 text-center'
+                  title='New Group'
+                  bordered={true}>
+                  <Input
+                    style={{ width: 350 }}
+                    placeholder='Please Enter Group Name'
+                  />
+                  <br />
+                  <Selectbox />
+                  <br />
+                  <DatePicker />
+                  <DatePicker />
+                  <DatePicker />
+                  {state.items.length > 0 ? null : (
+                    <Button
+                      className='  gr-btn top-05vw '
+                      type='primary'
+                      onClick={add}
+                      style={{ width: 350 }}>
+                      + Add New Group
+                    </Button>
+                  )}
 
-            {this.state.items.map((tags) => (
-              <React.Fragment>
-                <div className='itemParent'>
-                  <div className='itemStyle top-1-25vw'>
-                    <Input
-                      style={{ width: 350 }}
-                      placeholder='Please Enter Group Name'
-                    />
-                    　
-                  </div>
+                  {state.items.length === 6 ? null : (
+                    <Button
+                      className=' gr-btn top-05vw'
+                      type='primary'
+                      onClick={add}
+                      style={{ width: 350 }}>
+                      + Add New Group
+                    </Button>
+                  )}
                   <Button
                     style={{ width: 350 }}
                     title='Remove The Group'
                     type='primary'
                     danger
                     className=' gr-btn top-05vw '
-                    onClick={() => this.minus(tags.id)}>
+                    onClick={() => minus(tags.id)}>
                     - Delete This Group
                   </Button>
-                </div>
-              </React.Fragment>
-            ))}
+                </Card>
+              </div>
+            </Col>
+          </Row>
 
-            {this.state.items.length === 4 ||
-            this.state.items.length === 0 ? null : (
-              <Button
-                className='gr-btn'
-                type='primary'
-                onClick={this.add}
-                style={{ width: 250 }}>
-                + Add New Group
-              </Button>
-            )}
-          </Card>
-        </React.Fragment>
-        {/* Butonlar Card ekleyecek sekilde düzenlenecek */}
-        <Card
-          className='Card left-2vw'
-          title='Card title'
-          bordered={true}
-          style={{ width: 400 }}>
-          <Input style={{ width: 350 }} placeholder='Please Enter Group Name' />
-          <Selectbox />
-          <br />
-          <DatePicker />
-          <DatePicker />
-          <DatePicker />
-          <br />
-
-          <Button
-            style={{ width: 350 }}
-            title='Add New Group'
-            type='primary'
-            className='gr-btn top-2vw'>
-            + Add New Group
-          </Button>
-          <Button
-            href='{new-group}'
-            style={{ width: 350 }}
-            title='Remove The Group'
-            type='primary'
-            danger
-            className=' gr-btn top-05vw '>
-            - Delete This Group
-          </Button>
-
-          <Button
-            style={{ width: 350 }}
-            title='Save'
-            type='primary'
-            className=' gr-btn top-05vw  success '>
-            Save
-          </Button>
-        </Card>
-      </div>
-    );
-  }
-}
+          <div className='text-right pb-1vw'>
+            <button
+              style={{ width: 150 }}
+              title='Save'
+              type='submit'
+              className=' btn gr-btn top-05vw right-1vw success float-right '>
+              Save
+            </button>
+          </div>
+        </Form>
+      ))}
+    </div>
+  );
+};
 
 export default Cards;

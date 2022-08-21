@@ -1,12 +1,17 @@
 
 import React, { Component } from 'react';
-
 class Footer extends Component {
+
     render() {
         return (
             <div className='footer'>
-                <h2>Footer</h2>
+
+
+                Copyright <span>{new Date().getFullYear()}</span>© <a className={"copyright-a"} href={"https://feyzaerat.com/"}> FeyzaErat</a>
+
             </div>
+
+
         );
     }
 }
