@@ -157,3 +157,9 @@ body::-webkit-scrollbar{
   padding: 0.25vw;
   border: none;
 }
+.borderless {
+  border: none;
+  background: none;
+  box-shadow: none;
+  margin-top: -0.5vw;
+}
