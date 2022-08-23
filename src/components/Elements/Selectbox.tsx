@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import {Select } from 'antd';
+import React, {  useState } from 'react'
+import {Select} from 'antd';
 import type { SizeType } from 'antd/es/config-provider/SizeContext';
 
 const { Option} = Select;
@@ -12,8 +12,8 @@ const onSearch = (value: string) => {
 };
 
 const children: React.ReactNode[] = [];
-for (let i = 1; i < 11; i++) {
-    children.push(<Select.OptGroup key={i + i}>{i}</Select.OptGroup>);
+for (let i = 0; i < 11; i++) {
+    children.push(<Select.OptGroup key={i + 1}>{i}</Select.OptGroup>);
 }
 
 const days = [
@@ -48,9 +48,9 @@ const Selectboxes: React.FC = () => {
             onChange={handleChange}
             className='top-1vw left-1vw '>
                {days.map((option, index) => (
-                  <Select.OptGroup key={index} value={option.value}>
+                  <Select.Option key={index} value={option.value}>
                      {option.text}
-                  </Select.OptGroup>
+                  </Select.Option>
                ))}
            </Select><br/>
 
